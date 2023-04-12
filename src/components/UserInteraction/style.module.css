@@ -1,0 +1,9 @@
+.btn {
+    background-color: var(--bluePastel);
+    color: inherit;
+}
+
+.btn:hover {
+    background-color: var(--lilacPastel);
+    color: white;
+}
