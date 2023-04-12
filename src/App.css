@@ -10,12 +10,15 @@
   --bluePastel: #c6c7ff;
 
   --turquoisePastel: #b5e5ff;
+
+  --grayDark: #6c757d;
 }
 
 body {
   background-color: var(--pinkPastel);
   font-family: 'Edit Undo BRK', sans-serif;
   font-size: 1.3em;
+  color: var(--grayDark);
 }
 
 .cursor-pointer {
