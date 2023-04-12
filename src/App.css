@@ -1,0 +1,23 @@
+@import url('https://fonts.cdnfonts.com/css/edit-undo-brk');
+
+:root {
+  --pinkPastel: #f9abe7;
+
+  --purplePastel: #e1a9f6;
+
+  --lilacPastel: #d1bbf9;
+
+  --bluePastel: #c6c7ff;
+
+  --turquoisePastel: #b5e5ff;
+}
+
+body {
+  background-color: var(--pinkPastel);
+  font-family: 'Edit Undo BRK', sans-serif;
+  font-size: 1.3em;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

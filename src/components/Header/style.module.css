@@ -1,0 +1,18 @@
+.brandName {
+    color: white;
+    text-shadow:
+        4px 4px 0 var(--bluePastel),
+        0 0 8px rgb(205, 205, 205);
+    font-size: 4.6em;
+    line-height: .6em;
+}
+
+.brandName:first-of-type {
+    font-size: 3em;
+}
+
+header:hover .brandName {
+    text-shadow:
+        4px 4px 0 var(--lilacPastel),
+        0 0 8px rgb(205, 205, 205);
+}
