@@ -19,3 +19,8 @@ body,
 img {
   max-width: 100%;
 }
+
+p,
+ul {
+  margin: 0;
+}

@@ -1,3 +1,10 @@
+.interactionContainer {
+    height: 34vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .btn {
     background-color: var(--bluePastel);
     color: inherit;

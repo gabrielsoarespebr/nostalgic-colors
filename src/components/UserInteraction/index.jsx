@@ -6,10 +6,13 @@ import { HiFastForward } from 'react-icons/hi';
 import { IoTicket } from 'react-icons/io5';
 import { UserAssistant } from "../UserAssistant";
 
-export const UserInteraction = ({ setUserInputGlobal }) => {
+export const UserInteraction = ({ setUserInputGlobal, setGameStarted, isDisabled }) => {
     const [userInputLocal, setUserInputLocal] = useState("");
 
-    const handleClick = () => setUserInputGlobal(userInputLocal);
+    const handleClick = () => {
+        setUserInputGlobal(userInputLocal);
+        setGameStarted(true);
+    };
 
     const [assistantMessage, setAssistantMessage] = useState("Olá! Sou Lenny, seu assistente virtual. Clique em (?) para aprender a jogar.");
 
@@ -48,7 +51,7 @@ export const UserInteraction = ({ setUserInputGlobal }) => {
             </div>
             <UserAssistant message={assistantMessage} />
             <div className="input-group">
-                <input type="text" className="form-control" placeholder="Insira o nome do(a) personagem" aria-label="Character's name" aria-describedby="button-addon2" onChange={(event) => setUserInputLocal(event.target.value.toLowerCase())} value={userInputLocal} />
+                <input disabled={isDisabled} type="text" className="form-control" placeholder="Insira o nome do(a) personagem" aria-label="Character's name" aria-describedby="button-addon2" onChange={(event) => setUserInputLocal(event.target.value.toLowerCase())} value={userInputLocal} />
                 <button className={`btn ${style.btn}`} type="button" id="button-addon2" onClick={handleClick}>OK</button>
             </div>
         </div>
