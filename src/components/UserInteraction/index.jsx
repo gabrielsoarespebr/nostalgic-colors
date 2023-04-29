@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./style.module.css";
 import { BsQuestionLg } from 'react-icons/bs';
 import { TiArrowRepeat } from 'react-icons/ti';
@@ -6,15 +6,22 @@ import { HiFastForward } from 'react-icons/hi';
 import { IoTicket } from 'react-icons/io5';
 import { UserAssistant } from "../UserAssistant";
 
-export const UserInteraction = ({ setUserInputGlobal, setGameStarted, isDisabled }) => {
+export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded, points }) => {
     const [userInputLocal, setUserInputLocal] = useState("");
 
-    const handleClick = () => {
+    const handleInputSubmit = () => {
         setUserInputGlobal(userInputLocal);
         setGameStarted(true);
     };
 
     const [assistantMessage, setAssistantMessage] = useState("Olá! Sou Lenny, seu assistente virtual. Clique em (?) para aprender a jogar.");
+
+    useEffect(() => {
+        if (gameEnded) {
+            setAssistantMessage(`Fim de jogo! Sua pontuação foi: ${points}. Clique em (⟲) para reiniciar o jogo.`);
+        };
+    }, [gameEnded])
+
 
     const handleClickMenu = option => {
         let message;
@@ -51,8 +58,8 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, isDisabled
             </div>
             <UserAssistant message={assistantMessage} />
             <div className="input-group">
-                <input disabled={isDisabled} type="text" className="form-control" placeholder="Insira o nome do(a) personagem" aria-label="Character's name" aria-describedby="button-addon2" onChange={(event) => setUserInputLocal(event.target.value.toLowerCase())} value={userInputLocal} />
-                <button className={`btn ${style.btn}`} type="button" id="button-addon2" onClick={handleClick}>OK</button>
+                <input disabled={gameEnded} type="text" className="form-control" placeholder="Insira o nome do(a) personagem" aria-label="Character's name" aria-describedby="button-addon2" onChange={(event) => setUserInputLocal(event.target.value.toLowerCase())} value={userInputLocal} />
+                <button className={`btn ${style.btn}`} type="button" id="button-addon2" onClick={handleInputSubmit}>OK</button>
             </div>
         </div>
     )

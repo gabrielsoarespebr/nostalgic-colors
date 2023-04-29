@@ -76,11 +76,12 @@ function App() {
   const [userInput, setUserInput] = useState("nenhum2");
 
   const [bgColor, setBgColor] = useState("");
-  const [lifeAmount, setLifeAmount] = useState(5);
+  const [lifeAmount, setLifeAmount] = useState(2);
   const [hintAmount, setHintAmount] = useState(3);
+  const [points, setPoints] = useState(0);
 
   const [gameStarted, setGameStarted] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [gameEnded, setGameEnded] = useState(false);
 
   useEffect(() => { console.log(userInput) }, [userInput])
 
@@ -119,6 +120,7 @@ function App() {
 
   const correctAnswer = () => {
     console.log("acertou");
+    setPoints(points + 100);
     setBgColor("#77DD77");
     setTimeout(() => setBgColor(""), 2000);
     getNewRandomCharacter();
@@ -132,7 +134,7 @@ function App() {
   }
 
   const gameOver = () => {
-    setIsDisabled(true);
+    setGameEnded(true);
   }
 
   return (
@@ -140,8 +142,8 @@ function App() {
       <Character character={character} />
       <aside className='col-4'>
         <Header />
-        <UserInteraction setUserInputGlobal={setUserInput} isDisabled={isDisabled} setGameStarted={setGameStarted} />
-        <UserInfo lifeAmount={lifeAmount} hintAmount={hintAmount} />
+        <UserInteraction setUserInputGlobal={setUserInput} gameEnded={gameEnded} setGameStarted={setGameStarted} points={points} />
+        <UserInfo lifeAmount={lifeAmount} hintAmount={hintAmount} points={points} />
       </aside>
     </div>
   )

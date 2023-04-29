@@ -2,7 +2,7 @@ import { HeartIcon } from "../HeartIcon";
 import { TicketIcon } from "../TicketIcon";
 import style from "./style.module.css";
 
-export const UserInfo = ({ lifeAmount, hintAmount }) => {
+export const UserInfo = ({ lifeAmount, hintAmount, points }) => {
 
     let lifeArray = Array.from({ length: lifeAmount });
 
@@ -19,7 +19,7 @@ export const UserInfo = ({ lifeAmount, hintAmount }) => {
             </li>
             <li className="d-flex justify-content-between align-items-center">
                 <p>PONTOS</p>
-                <p className="fs-1">100</p>
+                <p className="fs-1">{points}</p>
             </li>
 
         </ul>
