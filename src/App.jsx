@@ -6,19 +6,7 @@ import { Header } from './components/Header'
 import { UserInteraction } from './components/UserInteraction'
 
 function App() {
-  const [character, setCharacter] = useState({ name: "nenhum1" });
-  const [userInput, setUserInput] = useState("nenhum2");
-
-  const [bgColor, setBgColor] = useState("");
-  const [lifeAmount, setLifeAmount] = useState(5);
-  const [hintAmount, setHintAmount] = useState(3);
-
-  const [gameStarted, setGameStarted] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
-
-  useEffect(() => { console.log(userInput) }, [userInput])
-
-  const characters = [
+  const [characterList, setCharacterList] = useState([
     {
       name: "Dory",
       context: "Procurando Nemo",
@@ -82,18 +70,44 @@ function App() {
       colors: ["#FDF165", "#493F39", "#A39E93"],
       hints: ["Acredita ser o rei supremo de todos os animais de Madagascar.", "Ele se remexe muito! Afinal, é um dançarino habilidoso.", "Maurice é seu assistente de confiança."]
     }
-  ];
+  ]);
 
-  useEffect(() => {
-    const characterIndex = Math.floor(Math.random() * (characters.length));
-    setCharacter(characters[characterIndex]);
-  }, []);
+  const [character, setCharacter] = useState({ name: "nenhum1" });
+  const [userInput, setUserInput] = useState("nenhum2");
+
+  const [bgColor, setBgColor] = useState("");
+  const [lifeAmount, setLifeAmount] = useState(5);
+  const [hintAmount, setHintAmount] = useState(3);
+
+  const [gameStarted, setGameStarted] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  useEffect(() => { console.log(userInput) }, [userInput])
+
+  useEffect(() => getNewRandomCharacter(), []);
 
   useEffect(() => {
     if (gameStarted) handleAnswer()
 
     if (!(lifeAmount > 1)) gameOver()
   }, [userInput]);
+
+  const getNewRandomCharacter = () => {
+    const characterIndex = Math.floor(Math.random() * (characterList.length));
+    const newRandomCharacter = characterList[characterIndex];
+    setCharacter(newRandomCharacter);
+
+    updateCharacterList(newRandomCharacter);
+  }
+
+  const updateCharacterList = (characterToRemove) => {
+    const indexCharacterToRemove = characterList.indexOf(characterToRemove);
+    console.log(indexCharacterToRemove);
+    console.log(characterList);
+    const newCharacterList = characterList.filter((e, index) => index !== indexCharacterToRemove);
+    setCharacterList(newCharacterList);
+    console.log(characterList);
+  }
 
   const handleAnswer = () => {
     if (userInput.toLowerCase() == character.name.toLowerCase()) {
@@ -106,7 +120,8 @@ function App() {
   const correctAnswer = () => {
     console.log("acertou");
     setBgColor("#77DD77");
-    setTimeout(() => setBgColor(""), 2000)
+    setTimeout(() => setBgColor(""), 2000);
+    getNewRandomCharacter();
   }
 
   const wrongAnswer = () => {
