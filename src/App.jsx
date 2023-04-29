@@ -83,15 +83,15 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameEnded, setGameEnded] = useState(false);
 
-  useEffect(() => { console.log(userInput) }, [userInput])
-
   useEffect(() => getNewRandomCharacter(), []);
 
   useEffect(() => {
     if (gameStarted) handleAnswer()
-
-    if (!(lifeAmount > 1)) gameOver()
   }, [userInput]);
+
+  useEffect(() => {
+    if (!(lifeAmount > 0)) gameOver()
+  });
 
   const getNewRandomCharacter = () => {
     const characterIndex = Math.floor(Math.random() * (characterList.length));
@@ -103,14 +103,12 @@ function App() {
 
   const updateCharacterList = (characterToRemove) => {
     const indexCharacterToRemove = characterList.indexOf(characterToRemove);
-    console.log(indexCharacterToRemove);
-    console.log(characterList);
     const newCharacterList = characterList.filter((e, index) => index !== indexCharacterToRemove);
     setCharacterList(newCharacterList);
-    console.log(characterList);
   }
 
   const handleAnswer = () => {
+    console.log(lifeAmount);
     if (userInput.toLowerCase() == character.name.toLowerCase()) {
       correctAnswer();
     } else {
