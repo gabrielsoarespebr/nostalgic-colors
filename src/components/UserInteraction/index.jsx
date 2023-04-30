@@ -6,7 +6,7 @@ import { HiFastForward } from 'react-icons/hi';
 import { IoTicket } from 'react-icons/io5';
 import { UserAssistant } from "../UserAssistant";
 
-export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded, points }) => {
+export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded, skipQuestion, points }) => {
     const [userInputLocal, setUserInputLocal] = useState("");
 
     const handleInputSubmit = () => {
@@ -33,10 +33,12 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
                 setTimeout(() => { setAssistantMessage("O jogo termina quando as vidas acabam. Estarei aqui se precisar. Bom jogo!") }, 20000);
                 break;
             case "restart":
-                message = "Restart.";
+                message = "Reiniciando...";
+                restartGame();
                 break;
-            case "next":
-                message = "Pular.";
+            case "skip":
+                message = "Sério que você não sabia? Lembre-se que pular a questão custa 1 vida.";
+                skipQuestion();
                 break;
             case "hint":
                 message = "Dica.";
@@ -54,12 +56,16 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
         }
     }
 
+    const restartGame = () => {
+        window.location.reload();
+    }
+
     return (
         <div className={style.interactionContainer}>
             <div className="d-flex justify-content-around">
                 <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("help")} title="Como jogar"><BsQuestionLg /></button>
                 <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("restart")} title="Reiniciar"><TiArrowRepeat /></button>
-                <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("next")} title="Pular"><HiFastForward /></button>
+                <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("skip")} title="Pular"><HiFastForward /></button>
                 <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("hint")} title="Dica"><IoTicket /></button>
             </div>
             <UserAssistant message={assistantMessage} />

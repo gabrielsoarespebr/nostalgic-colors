@@ -131,6 +131,14 @@ function App() {
     setLifeAmount(lifeAmount - 1);
   }
 
+  const skipQuestion = () => {
+    console.log("pulou a questão");
+    setBgColor("#FDFD96");
+    setTimeout(() => setBgColor(""), 2000);
+    setLifeAmount(lifeAmount - 1);
+    getNewRandomCharacter();
+  }
+
   const gameOver = () => {
     setGameEnded(true);
   }
@@ -140,7 +148,7 @@ function App() {
       <Character character={character} />
       <aside className='col-4'>
         <Header />
-        <UserInteraction setUserInputGlobal={setUserInput} gameEnded={gameEnded} setGameStarted={setGameStarted} points={points} />
+        <UserInteraction setUserInputGlobal={setUserInput} setGameStarted={setGameStarted} gameEnded={gameEnded} skipQuestion={skipQuestion} points={points} />
         <UserInfo lifeAmount={lifeAmount} hintAmount={hintAmount} points={points} />
       </aside>
     </div>
