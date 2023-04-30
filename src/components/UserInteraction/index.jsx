@@ -22,7 +22,6 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
         };
     }, [gameEnded])
 
-
     const handleClickMenu = option => {
         let message;
         switch (option) {
@@ -48,6 +47,13 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
         setAssistantMessage(message);
     }
 
+    const handleEnterKeyPress = e => {
+        if (e.key === 'Enter') {
+            handleInputSubmit();
+            setUserInputLocal("")
+        }
+    }
+
     return (
         <div className={style.interactionContainer}>
             <div className="d-flex justify-content-around">
@@ -58,7 +64,7 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
             </div>
             <UserAssistant message={assistantMessage} />
             <div className="input-group">
-                <input disabled={gameEnded} type="text" className="form-control" placeholder="Insira o nome do(a) personagem" aria-label="Character's name" aria-describedby="button-addon2" onChange={(event) => setUserInputLocal(event.target.value.toLowerCase())} value={userInputLocal} />
+                <input disabled={gameEnded} type="text" className="form-control" placeholder="Insira o nome do(a) personagem" aria-label="Character's name" aria-describedby="button-addon2" onChange={(event) => setUserInputLocal(event.target.value.toLowerCase())} value={userInputLocal} onKeyDown={handleEnterKeyPress} />
                 <button className={`btn ${style.btn}`} type="button" id="button-addon2" onClick={handleInputSubmit}>OK</button>
             </div>
         </div>
