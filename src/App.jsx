@@ -86,7 +86,7 @@ function App() {
   useEffect(() => getNewRandomCharacter(), []);
 
   useEffect(() => {
-    if (gameStarted) handleAnswer()
+    if (gameStarted && !gameEnded) handleAnswer()
   }, [userInput]);
 
   useEffect(() => {

@@ -12,6 +12,7 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
     const handleInputSubmit = () => {
         setUserInputGlobal(userInputLocal);
         setGameStarted(true);
+        setUserInputLocal("")
     };
 
     const [assistantMessage, setAssistantMessage] = useState("Olá! Sou Lenny, seu assistente virtual. Clique em (?) para aprender a jogar.");
@@ -49,8 +50,7 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
 
     const handleEnterKeyPress = e => {
         if (e.key === 'Enter') {
-            handleInputSubmit();
-            setUserInputLocal("")
+            handleInputSubmit()
         }
     }
 
