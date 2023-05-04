@@ -114,11 +114,11 @@ function App() {
     }
   ]);
 
-  const [character, setCharacter] = useState({ name: "nenhum1" });
-  const [userInput, setUserInput] = useState("nenhum2");
+  const [character, setCharacter] = useState({});
+  const [userInput, setUserInput] = useState("");
 
   const [bgColor, setBgColor] = useState("");
-  const [lifeAmount, setLifeAmount] = useState(2);
+  const [lifeAmount, setLifeAmount] = useState(5);
   const [hintAmount, setHintAmount] = useState(3);
   const [points, setPoints] = useState(0);
 
