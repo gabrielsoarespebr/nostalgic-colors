@@ -6,7 +6,7 @@ import { HiFastForward } from 'react-icons/hi';
 import { IoTicket } from 'react-icons/io5';
 import { UserAssistant } from "../UserAssistant";
 
-export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded, skipQuestion, points }) => {
+export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded, skipQuestion, hints, hintAmount, askForAHint, points }) => {
     const [userInputLocal, setUserInputLocal] = useState("");
 
     const handleInputSubmit = () => {
@@ -41,7 +41,9 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
                 skipQuestion();
                 break;
             case "hint":
-                message = "Dica.";
+                message = hints[0];
+                hints.shift();
+                askForAHint();
                 break;
             default:
                 message = "Opção inválida.";
@@ -66,7 +68,9 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
                 <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("help")} title="Como jogar"><BsQuestionLg /></button>
                 <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("restart")} title="Reiniciar"><TiArrowRepeat /></button>
                 <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("skip")} title="Pular"><HiFastForward /></button>
-                <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("hint")} title="Dica"><IoTicket /></button>
+
+                {/* hintAmount is zero when there are not hints availables. Zero is a falsy value, so disable attribute becomes true. */}
+                <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("hint")} title="Dica" disabled={!hintAmount}><IoTicket /></button>
             </div>
             <UserAssistant message={assistantMessage} />
             <div className="input-group">

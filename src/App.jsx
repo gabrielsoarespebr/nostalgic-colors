@@ -139,6 +139,10 @@ function App() {
     getNewRandomCharacter();
   }
 
+  const askForAHint = () => {
+    setHintAmount(hintAmount - 1);
+  }
+
   const gameOver = () => {
     setGameEnded(true);
   }
@@ -148,7 +152,7 @@ function App() {
       <Character character={character} />
       <aside className='col-4'>
         <Header />
-        <UserInteraction setUserInputGlobal={setUserInput} setGameStarted={setGameStarted} gameEnded={gameEnded} skipQuestion={skipQuestion} points={points} />
+        <UserInteraction setUserInputGlobal={setUserInput} setGameStarted={setGameStarted} gameEnded={gameEnded} skipQuestion={skipQuestion} hints={character.hints} hintAmount={hintAmount} askForAHint={askForAHint} points={points} />
         <UserInfo lifeAmount={lifeAmount} hintAmount={hintAmount} points={points} />
       </aside>
     </div>
