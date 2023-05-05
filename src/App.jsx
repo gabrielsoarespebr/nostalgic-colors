@@ -5,6 +5,12 @@ import { UserInfo } from './components/UserInfo'
 import { Header } from './components/Header'
 import { UserInteraction } from './components/UserInteraction'
 
+import soundCorrectAnswer from '../src/assets/audios/effects/correctAnswer.wav'
+import soundWrongAnswer from '../src/assets/audios/effects/wrongAnswer.wav'
+import soundSkipQuestion from '../src/assets/audios/effects/skip.wav'
+import soundAskForAHint from '../src/assets/audios/effects/hint.wav'
+import soundGameOver from '../src/assets/audios/effects/gameOver.wav'
+
 function App() {
   const [characterList, setCharacterList] = useState([
     {
@@ -125,6 +131,9 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameEnded, setGameEnded] = useState(false);
 
+  const [soundEffect, setSoundEffect] = useState("");
+  const [soundEffectsOn, setSoundEffectsOn] = useState(false);
+
   useEffect(() => getNewRandomCharacter(), []);
 
   useEffect(() => {
@@ -134,6 +143,14 @@ function App() {
   useEffect(() => {
     if (!(lifeAmount > 0)) gameOver()
   });
+
+  // Everytime soundEffect changes, the accordingly soundEffect is played. Remember initial value is falsy (empty string), and it's setted falsy again after soundEffect is played.
+  useEffect(() => {
+    if (soundEffect) {
+      new Audio(soundEffect).play();
+      if (soundEffect !== soundGameOver) setSoundEffect("");
+    }
+  }, [soundEffect])
 
   const getNewRandomCharacter = () => {
     const characterIndex = Math.floor(Math.random() * (characterList.length));
@@ -160,6 +177,7 @@ function App() {
 
   const correctAnswer = () => {
     console.log("acertou");
+    setSoundEffect(soundCorrectAnswer);
     setPoints(points + 100);
     setBgColor("#77DD77");
     setTimeout(() => setBgColor(""), 2000);
@@ -168,6 +186,7 @@ function App() {
 
   const wrongAnswer = () => {
     console.log("errou");
+    setSoundEffect(soundWrongAnswer);
     setBgColor("#FF6961");
     setTimeout(() => setBgColor(""), 2000);
     setLifeAmount(lifeAmount - 1);
@@ -175,6 +194,7 @@ function App() {
 
   const skipQuestion = () => {
     console.log("pulou a questão");
+    setSoundEffect(soundSkipQuestion);
     setBgColor("#FDFD96");
     setTimeout(() => setBgColor(""), 2000);
     setLifeAmount(lifeAmount - 1);
@@ -182,10 +202,12 @@ function App() {
   }
 
   const askForAHint = () => {
+    setSoundEffect(soundAskForAHint);
     setHintAmount(hintAmount - 1);
   }
 
   const gameOver = () => {
+    setSoundEffect(soundGameOver);
     setGameEnded(true);
   }
 
