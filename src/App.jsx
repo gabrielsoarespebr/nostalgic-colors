@@ -146,9 +146,11 @@ function App() {
 
   // Everytime soundEffect changes, the accordingly soundEffect is played. Remember initial value is falsy (empty string), and it's setted falsy again after soundEffect is played.
   useEffect(() => {
-    if (soundEffect) {
-      new Audio(soundEffect).play();
-      if (soundEffect !== soundGameOver) setSoundEffect("");
+    if (soundEffectsOn) {
+      if (soundEffect) {
+        new Audio(soundEffect).play();
+        if (soundEffect !== soundGameOver) setSoundEffect("");
+      }
     }
   }, [soundEffect])
 
@@ -216,7 +218,7 @@ function App() {
       <Character character={character} />
       <aside className='col-4'>
         <Header />
-        <UserInteraction setUserInputGlobal={setUserInput} setGameStarted={setGameStarted} gameEnded={gameEnded} skipQuestion={skipQuestion} hints={character.hints} hintAmount={hintAmount} askForAHint={askForAHint} points={points} />
+        <UserInteraction setUserInputGlobal={setUserInput} setGameStarted={setGameStarted} gameEnded={gameEnded} skipQuestion={skipQuestion} hints={character.hints} hintAmount={hintAmount} askForAHint={askForAHint} points={points} soundEffectsOn={soundEffectsOn} setSoundEffectsOn={setSoundEffectsOn} />
         <UserInfo lifeAmount={lifeAmount} hintAmount={hintAmount} points={points} />
       </aside>
     </div>

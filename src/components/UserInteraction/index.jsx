@@ -4,9 +4,11 @@ import { BsQuestionLg } from 'react-icons/bs';
 import { TiArrowRepeat } from 'react-icons/ti';
 import { HiFastForward } from 'react-icons/hi';
 import { IoTicket } from 'react-icons/io5';
+import { HiVolumeUp } from 'react-icons/hi';
+import { HiVolumeOff } from 'react-icons/hi';
 import { UserAssistant } from "../UserAssistant";
 
-export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded, skipQuestion, hints, hintAmount, askForAHint, points }) => {
+export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded, skipQuestion, hints, hintAmount, askForAHint, points, soundEffectsOn, setSoundEffectsOn }) => {
     const [userInputLocal, setUserInputLocal] = useState("");
 
     const handleInputSubmit = () => {
@@ -35,6 +37,10 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
             case "restart":
                 message = "Reiniciando...";
                 restartGame();
+                break;
+            case "soundToggle":
+                setSoundEffectsOn(!soundEffectsOn);
+                message = soundEffectsOn ? "Som desabilitado." : "Som habilitado.";
                 break;
             case "skip":
                 message = "Sério que você não sabia? Lembre-se que pular a questão custa 1 vida.";
@@ -66,11 +72,17 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
         <div className={style.interactionContainer}>
             <div className="d-flex justify-content-around">
                 <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("help")} title="Como jogar"><BsQuestionLg /></button>
+
                 <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("restart")} title="Reiniciar"><TiArrowRepeat /></button>
-                <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("skip")} title="Pular"><HiFastForward /></button>
+
+                <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("soundToggle")} title="Efeitos sonoros">
+                    {soundEffectsOn ? <HiVolumeOff /> : <HiVolumeUp />}
+                </button>
+
+                <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("skip")} title="Pular" disabled={gameEnded}><HiFastForward /></button>
 
                 {/* hintAmount is zero when there are not hints availables. Zero is a falsy value, so disable attribute becomes true. */}
-                <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("hint")} title="Dica" disabled={!hintAmount}><IoTicket /></button>
+                <button className={`btn ${style.btn}`} onClick={() => handleClickMenu("hint")} title="Dica" disabled={!hintAmount || gameEnded}><IoTicket /></button>
             </div>
             <UserAssistant message={assistantMessage} />
             <div className="input-group">
