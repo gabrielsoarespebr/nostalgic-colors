@@ -1,9 +1,34 @@
 .characterContainer {
     height: 84%;
     aspect-ratio: 1/1;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.characterPhoto {
-    max-width: 80%;
-    max-height: 80%;
+.characterFigure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+
+    margin: 0;
+}
+
+.characterFigure>img{
+    width: 70%;
+    height: auto;
+}
+
+.context{
+    font-size: 70%;
+    opacity: 0.7;
+
+    text-align: center;
 }
