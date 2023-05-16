@@ -1,0 +1,26 @@
+.shapesContainer {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+}
+
+.shapeLg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.shapeMd {
+    width: 100%;
+    height: 100%;
+    clip-path: circle(104% at 0% 99%);
+    position: absolute;
+}
+
+.shapeSm {
+    width: 100%;
+    height: 100%;
+    clip-path: circle(83% at 0% 99%);
+    position: absolute;
+}

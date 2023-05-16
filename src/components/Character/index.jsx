@@ -1,3 +1,4 @@
+import { Overlay } from "../Overlay";
 import style from "./style.module.css";
 
 export const Character = ({ character }) => {
@@ -10,6 +11,7 @@ export const Character = ({ character }) => {
                     <p className={style.context}>{character.context}</p>
                 </figcaption>
             </figure>
+            {character.colors && <Overlay character={character} />}
         </div>
     )
 }
