@@ -4,9 +4,9 @@
         "context": "A Era do Gelo",
         "photo": "/assets/images/characters/sid.png",
         "colors": [
-            "#C5AC72",
-            "#F0E6C1",
-            "#9C4C6F"
+            "#CDB379",
+            "#E9DFBC",
+            "#B26C92"
         ],
         "hints": [
             "É um bicho-preguiça que fala demais.",
@@ -49,9 +49,9 @@
         "context": "Bob Esponja",
         "photo": "/assets/images/characters/bobesponja.png",
         "colors": [
-            "#FFFF36",
-            "#FE230E",
-            "#FE230E"
+            "#D3820F",
+            "#FFFFFF",
+            "#FFFF38"
         ],
         "hints": [
             "Gosta de caçar águas-vivas com seu melhor amigo.",
@@ -64,9 +64,9 @@
         "context": "Bob Esponja",
         "photo": "/assets/images/characters/lulamolusco.png",
         "colors": [
-            "#ADD1C5",
-            "#DC8F19",
-            "#7894C8"
+            "#B0D1C6",
+            "#6D97CE",
+            "#D98E19"
         ],
         "hints": [
             "Seus hobbies são pintar quadros e tocar clarinete.",
@@ -124,9 +124,9 @@
         "context": "Dragon Ball",
         "photo": "/assets/images/characters/kuririn.png",
         "colors": [
-            "#FFCDB5",
-            "#E94800",
-            "#070602"
+            "#EB4901",
+            "#232C97",
+            "#FECFB5"
         ],
         "hints": [
             "Baixinho e careca quando se trata de aparência. Justo e leal quando se trata de personalidade.",
@@ -154,9 +154,9 @@
         "context": "Hora de Aventura",
         "photo": "/assets/images/characters/finn.png",
         "colors": [
-            "#FFFFFF",
-            "#50A847",
-            "#2B66B3"
+            "#24CEFF",
+            "#97E172",
+            "#FFFFFF"
         ],
         "hints": [
             "Em seu nome, a letra N aparece duas vezes.",
@@ -169,9 +169,9 @@
         "context": "Hora de Aventura",
         "photo": "/assets/images/characters/reigelado.png",
         "colors": [
-            "#FECD00",
+            "#0000FF",
             "#ABDEFE",
-            "#0000FF"
+            "#FECD00"
         ],
         "hints": [
             "No aspecto amoroso, é bastante carente, e está sempre em busca de uma princesa para noivar.",
@@ -184,9 +184,9 @@
         "context": "Madagascar",
         "photo": "/assets/images/characters/reijulien.png",
         "colors": [
-            "#FDF165",
-            "#493F39",
-            "#A39E93"
+            "#BFB9B5",
+            "#332B22",
+            "#E9A908"
         ],
         "hints": [
             "Acredita ser o rei supremo de todos os animais de Madagascar.",
@@ -199,9 +199,9 @@
         "context": "Mickey Mouse",
         "photo": "/assets/images/characters/mickey.png",
         "colors": [
-            "#000000",
-            "#FF362E",
-            "#FAC127"
+            "#FD362F",
+            "#010101",
+            "#FFFFFF"
         ],
         "hints": [
             "Ele é um camundongo que se tornou símbolo da Disney.",
@@ -214,9 +214,9 @@
         "context": "O Laboratório de Dexter",
         "photo": "/assets/images/characters/dexter.png",
         "colors": [
-            "#FFFFFF",
-            "#FEE4DB",
-            "#EB7417"
+            "#010101",
+            "#FBE2DB",
+            "#FFFFFF"
         ],
         "hints": [
             "É um menino prodígio, com QI extremamente alto.",
@@ -229,9 +229,9 @@
         "context": "O Menino Maluquinho",
         "photo": "/assets/images/characters/meninomaluquinho.png",
         "colors": [
-            "#FFF212",
-            "#282828",
-            "#B3B5B7"
+            "#292929",
+            "#FFF115",
+            "#B4B4B4"
         ],
         "hints": [
             "Usa uma panela na cabeça.",
@@ -260,8 +260,8 @@
         "photo": "/assets/images/characters/gelado.png",
         "colors": [
             "#48B1BB",
-            "#412B1D",
-            "#FFFFFF"
+            "#FFFFFF",
+            "#412B1D"
         ],
         "hints": [
             "É capaz de criar rampas e escorregadores de gelo para se movimentar com mais rapidez.",
@@ -274,9 +274,9 @@
         "context": "Os Padrinhos Mágicos",
         "photo": "/assets/images/characters/cosmo.png",
         "colors": [
-            "#FAC1A3",
-            "#7BB850",
-            "#F8D53B"
+            "#010101",
+            "#FDFDFD",
+            "#7CB64F"
         ],
         "hints": [
             "Usa uma coroa e uma varinha mágica.",
@@ -289,9 +289,9 @@
         "context": "Os Simpsons",
         "photo": "/assets/images/characters/bart.png",
         "colors": [
-            "#FAD835",
-            "#ED4731",
-            "#309ADA"
+            "#319BDD",
+            "#EC4731",
+            "#F9D936"
         ],
         "hints": [
             "Anda de skate.",
@@ -349,9 +349,9 @@
         "context": "Turma da Mônica",
         "photo": "/assets/images/characters/cebolinha.png",
         "colors": [
-            "#00983B",
-            "#050301",
-            "#9B501A"
+            "#030303",
+            "#02983B",
+            "#FAB49B"
         ],
         "hints": [
             "É conhecido por trocar o R pelo L ao falar.",
