@@ -20,6 +20,8 @@ function App() {
   const [userInput, setUserInput] = useState("");
 
   const [bgColor, setBgColor] = useState("");
+  const [showCharacter, setShowCharacter] = useState(false);
+
   const [lifeAmount, setLifeAmount] = useState(5);
   const [hintAmount, setHintAmount] = useState(3);
   const [points, setPoints] = useState(0);
@@ -78,8 +80,12 @@ function App() {
     setSoundEffect(soundCorrectAnswer);
     setPoints(points + 100);
     setBgColor("#77DD77");
-    setTimeout(() => setBgColor(""), 2000);
-    getNewRandomCharacter();
+    setShowCharacter(true);
+    setTimeout(() => {
+      setBgColor("");
+      setShowCharacter(false);
+      getNewRandomCharacter();
+    }, 2000);
   }
 
   const wrongAnswer = () => {
@@ -94,9 +100,13 @@ function App() {
     console.log("pulou a questão");
     setSoundEffect(soundSkipQuestion);
     setBgColor("#FDFD96");
-    setTimeout(() => setBgColor(""), 2000);
+    setShowCharacter(true);
     setLifeAmount(lifeAmount - 1);
-    getNewRandomCharacter();
+    setTimeout(() => {
+      setBgColor("");
+      setShowCharacter(false);
+      getNewRandomCharacter();
+    }, 2000);
   }
 
   const askForAHint = () => {
@@ -111,7 +121,7 @@ function App() {
 
   return (
     <div style={{ backgroundColor: bgColor }} className="App d-flex align-items-center justify-content-center gap-4">
-      <Character character={character} />
+      <Character character={character} showCharacter={showCharacter} />
       <aside className='col-4'>
         <Header />
         <UserInteraction setUserInputGlobal={setUserInput} setGameStarted={setGameStarted} gameEnded={gameEnded} skipQuestion={skipQuestion} hints={character.hints} hintAmount={hintAmount} askForAHint={askForAHint} points={points} soundEffectsOn={soundEffectsOn} setSoundEffectsOn={setSoundEffectsOn} />
