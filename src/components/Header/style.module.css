@@ -16,20 +16,3 @@ header:hover .brandName {
         4px 4px 0 var(--lilacPastel),
         0 0 8px rgb(205, 205, 205);
 }
-
-.developerName {
-    font-size: .7em;
-    text-decoration: none;
-    color: white;
-    text-shadow:
-        2px 2px 0 var(--bluePastel),
-        0 0 8px rgb(205, 205, 205);
-}
-
-header:hover .developerName {
-    text-decoration: none;
-    color: white;
-    text-shadow:
-        2px 2px 0 var(--lilacPastel),
-        0 0 8px rgb(205, 205, 205);
-}

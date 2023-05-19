@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 import style from "./style.module.css";
+
 import { BsQuestionLg } from 'react-icons/bs';
 import { TiArrowRepeat } from 'react-icons/ti';
 import { HiFastForward } from 'react-icons/hi';
 import { IoTicket } from 'react-icons/io5';
 import { HiVolumeUp } from 'react-icons/hi';
 import { HiVolumeOff } from 'react-icons/hi';
+
 import { UserAssistant } from "../UserAssistant";
+import Modal from 'react-modal';
+
+import helpImages from '../../data/help';
+
+Modal.setAppElement('#root');
 
 export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded, skipQuestion, hints, hintAmount, askForAHint, points, soundEffectsOn, setSoundEffectsOn }) => {
     const [userInputLocal, setUserInputLocal] = useState("");
@@ -25,14 +32,17 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
         };
     }, [gameEnded])
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalImageIndex, setModalImageIndex] = useState(0);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     const handleClickMenu = option => {
         let message;
         switch (option) {
             case "help":
-                message = "O objetivo do jogo é adivinhar o personagem com base nas cores.";
-                setTimeout(() => { setAssistantMessage("Clique em (⟲) para reiniciar o jogo, (⯮) para pular questão e (🎟) para receber dicas.") }, 5000);
-                setTimeout(() => { setAssistantMessage("São 3 dicas por personagem. E cuidado: errar/pular questão custa 1 vida.") }, 12000);
-                setTimeout(() => { setAssistantMessage("O jogo termina quando as vidas acabam. Estarei aqui se precisar. Bom jogo!") }, 20000);
+                openModal();
                 break;
             case "restart":
                 message = "Reiniciando...";
@@ -89,6 +99,14 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
                 <input disabled={gameEnded} type="text" className="form-control" placeholder="Insira o nome do(a) personagem" aria-label="Character's name" aria-describedby="button-addon2" onChange={(event) => setUserInputLocal(event.target.value.toLowerCase())} value={userInputLocal} onKeyDown={handleEnterKeyPress} />
                 <button className={`btn ${style.btn}`} type="button" id="button-addon2" onClick={handleInputSubmit}>OK</button>
             </div>
+            <Modal isOpen={isModalOpen} onRequestClose={closeModal} className={style.modalContent} overlayClassName={style.modalOverlay}>
+                <img className="w-md-75" src={helpImages[modalImageIndex]} alt="Ajuda" />
+                <div className="d-flex gap-5">
+                    <button className={`btn ${style.btn}`} onClick={() => setModalImageIndex(modalImageIndex - 1)} disabled={true && !modalImageIndex}>&#10094;</button>
+                    <button className={`btn ${style.btn}`} onClick={() => setModalImageIndex(modalImageIndex + 1)} disabled={modalImageIndex === (helpImages.length - 1)}>&#10095;</button>
+                    <button onClick={closeModal} className={`float-right btn ${style.btn}`}>&#128473;</button>
+                </div>
+            </Modal>
         </div>
     )
 }
