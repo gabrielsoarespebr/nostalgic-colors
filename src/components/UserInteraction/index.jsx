@@ -43,6 +43,7 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
         switch (option) {
             case "help":
                 openModal();
+                message = "Olá! Sou Lenny, seu assistente virtual. Clique em (?) para aprender a jogar.";
                 break;
             case "restart":
                 message = "Reiniciando...";
