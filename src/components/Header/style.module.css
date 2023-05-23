@@ -11,6 +11,15 @@
     font-size: 3em;
 }
 
+@media (max-width: 800px) {
+    .brandName {
+        font-size: 3em;
+    }
+    .brandName:first-of-type {
+        font-size: 2em;
+    }
+}
+
 header:hover .brandName {
     text-shadow:
         4px 4px 0 var(--lilacPastel),

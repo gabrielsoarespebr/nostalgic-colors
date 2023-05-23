@@ -120,9 +120,9 @@ function App() {
   }
 
   return (
-    <div style={{ backgroundColor: bgColor }} className="App d-flex align-items-center justify-content-center gap-4">
+    <div style={{ backgroundColor: bgColor }} className="App d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 p-3">
       <Character character={character} showCharacter={showCharacter} />
-      <aside className='col-4'>
+      <aside className='col-md-4'>
         <Header />
         <UserInteraction setUserInputGlobal={setUserInput} setGameStarted={setGameStarted} gameEnded={gameEnded} skipQuestion={skipQuestion} hints={character.hints} hintAmount={hintAmount} askForAHint={askForAHint} points={points} soundEffectsOn={soundEffectsOn} setSoundEffectsOn={setSoundEffectsOn} />
         <UserInfo lifeAmount={lifeAmount} hintAmount={hintAmount} points={points} />

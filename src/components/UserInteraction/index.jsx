@@ -28,7 +28,7 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
 
     useEffect(() => {
         if (!gameEnded) {
-            setAssistantMessage("Olá! Sou Lenny, seu assistente virtual. Clique em (?) para aprender a jogar.")
+            setAssistantMessage("Sou Lenny, seu assistente virtual. Clique em (?) para aprender a jogar.")
         }
     }, [hints])
 
@@ -49,7 +49,7 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
         switch (option) {
             case "help":
                 openModal();
-                message = "Olá! Sou Lenny, seu assistente virtual. Clique em (?) para aprender a jogar.";
+                message = "Após inserir a resposta, pressione Enter ou clique em OK.";
                 break;
             case "restart":
                 message = "Reiniciando...";
@@ -107,7 +107,7 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
                 <button className={`btn ${style.btn}`} type="button" id="button-addon2" onClick={handleInputSubmit}>OK</button>
             </div>
             <Modal isOpen={isModalOpen} onRequestClose={closeModal} className={style.modalContent} overlayClassName={style.modalOverlay}>
-                <img className="w-md-75" src={helpImages[modalImageIndex]} alt="Ajuda" />
+                <img className="w-75" src={helpImages[modalImageIndex]} alt="Ajuda" />
                 <div className="d-flex gap-5">
                     <button className={`btn ${style.btn}`} onClick={() => setModalImageIndex(modalImageIndex - 1)} disabled={true && !modalImageIndex}>&#10094;</button>
                     <button className={`btn ${style.btn}`} onClick={() => setModalImageIndex(modalImageIndex + 1)} disabled={modalImageIndex === (helpImages.length - 1)}>&#10095;</button>
