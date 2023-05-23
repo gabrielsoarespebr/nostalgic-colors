@@ -24,7 +24,13 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
         setUserInputLocal("")
     };
 
-    const [assistantMessage, setAssistantMessage] = useState("Olá! Sou Lenny, seu assistente virtual. Clique em (?) para aprender a jogar.");
+    const [assistantMessage, setAssistantMessage] = useState("");
+
+    useEffect(() => {
+        if (!gameEnded) {
+            setAssistantMessage("Olá! Sou Lenny, seu assistente virtual. Clique em (?) para aprender a jogar.")
+        }
+    }, [hints])
 
     useEffect(() => {
         if (gameEnded) {
@@ -54,7 +60,7 @@ export const UserInteraction = ({ setUserInputGlobal, setGameStarted, gameEnded,
                 message = soundEffectsOn ? "Som desabilitado." : "Som habilitado.";
                 break;
             case "skip":
-                message = "Sério que você não sabia? Lembre-se que pular a questão custa 1 vida.";
+                message = "Sério que você não sabia?";
                 skipQuestion();
                 break;
             case "hint":
