@@ -21,6 +21,12 @@ body {
   color: var(--grayDark);
 }
 
+@media (min-width: 1200px) {
+  body {
+    font-size: 2em;
+  }
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
