@@ -67,7 +67,6 @@ function App() {
   }
 
   const handleAnswer = () => {
-    console.log(lifeAmount);
     if (userInput.toLowerCase() == character.name.toLowerCase()) {
       correctAnswer();
     } else {
@@ -76,7 +75,6 @@ function App() {
   };
 
   const correctAnswer = () => {
-    console.log("acertou");
     setSoundEffect(soundCorrectAnswer);
     setPoints(points + 100);
     setBgColor("#77DD77");
@@ -89,7 +87,6 @@ function App() {
   }
 
   const wrongAnswer = () => {
-    console.log("errou");
     setSoundEffect(soundWrongAnswer);
     setBgColor("#FF6961");
     setTimeout(() => setBgColor(""), 2000);
@@ -97,7 +94,6 @@ function App() {
   }
 
   const skipQuestion = () => {
-    console.log("pulou a questão");
     setSoundEffect(soundSkipQuestion);
     setBgColor("#FDFD96");
     setShowCharacter(true);
