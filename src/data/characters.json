@@ -32,7 +32,7 @@
     {
         "name": "Bob Esponja",
         "context": "Bob Esponja",
-        "photo": "/assets/images/characters/bobesponja.png",
+        "photo": "/assets/images/characters/bobEsponja.png",
         "colors": [
             "#D3820F",
             "#FFFFFF",
@@ -47,7 +47,7 @@
     {
         "name": "Lula Molusco",
         "context": "Bob Esponja",
-        "photo": "/assets/images/characters/lulamolusco.png",
+        "photo": "/assets/images/characters/lulaMolusco.png",
         "colors": [
             "#B0D1C6",
             "#6D97CE",
@@ -62,7 +62,7 @@
     {
         "name": "Seu Madruga",
         "context": "Chaves",
-        "photo": "/assets/images/characters/seumadruga.png",
+        "photo": "/assets/images/characters/seuMadruga.png",
         "colors": [
             "#6A758B",
             "#90959F",
@@ -77,7 +77,7 @@
     {
         "name": "Majin Boo",
         "context": "Dragon Ball",
-        "photo": "/assets/images/characters/majinboo.png",
+        "photo": "/assets/images/characters/majinBoo.png",
         "colors": [
             "#FEBED1",
             "#F6FBF8",
@@ -107,7 +107,7 @@
     {
         "name": "Rei Gelado",
         "context": "Hora de Aventura",
-        "photo": "/assets/images/characters/reigelado.png",
+        "photo": "/assets/images/characters/reiGelado.png",
         "colors": [
             "#0000FF",
             "#ABDEFE",
@@ -122,7 +122,7 @@
     {
         "name": "Rei Julien",
         "context": "Madagascar",
-        "photo": "/assets/images/characters/reijulien.png",
+        "photo": "/assets/images/characters/reiJulien.png",
         "colors": [
             "#BFB9B5",
             "#332B22",
@@ -152,7 +152,7 @@
     {
         "name": "Menino Maluquinho",
         "context": "O Menino Maluquinho",
-        "photo": "/assets/images/characters/meninomaluquinho.png",
+        "photo": "/assets/images/characters/meninoMaluquinho.png",
         "colors": [
             "#292929",
             "#FFF115",
@@ -167,7 +167,7 @@
     {
         "name": "Edna Moda",
         "context": "Os Incríveis",
-        "photo": "/assets/images/characters/ednamoda.png",
+        "photo": "/assets/images/characters/ednaModa.png",
         "colors": [
             "#0D0B0B",
             "#E3C5B8",
@@ -251,7 +251,7 @@
         "hints": [
             "É um peixe da espécie cirurgião-patela, e seu lema é &ldquo;Continue a nadar!&rdquo;",
             "Esquece as coisas rapidamente.",
-            "Seu nome tem 4 letras ao total, e uma delas é Y."
+            "Seu nome tem 4 letras ao total, e a última é Y."
         ]
     },
     {
