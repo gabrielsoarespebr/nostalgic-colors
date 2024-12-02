@@ -45,6 +45,21 @@
         ]
     },
     {
+        "name": "Gary",
+        "context": "Bob Esponja",
+        "photo": "/assets/images/characters/gary.png",
+        "colors": [
+            "#97D4EF",
+            "#FBC9C4",
+            "#ABC76C"
+        ],
+        "hints": [
+            "Caracol de estimação que mia feito um gato.",
+            "Sua casa é um abacaxi e seu tutor é uma esponja-do-mar.",
+            "Lê livros e assiste TV."
+        ]
+    },
+    {
         "name": "Lula Molusco",
         "context": "Bob Esponja",
         "photo": "/assets/images/characters/lulaMolusco.png",
@@ -57,6 +72,36 @@
             "Seus hobbies são pintar quadros e tocar clarinete.",
             "Tem personalidade arrogante e frequentemente zomba dos outros personagens.",
             "É um polvo, apesar de seu nome sugerir que é uma lula."
+        ]
+    },
+    {
+        "name": "Patrick",
+        "context": "Bob Esponja",
+        "photo": "/assets/images/characters/patrick.png",
+        "colors": [
+            "#F6A3A5",
+            "#D2DC22",
+            "#A988BD"
+        ],
+        "hints": [
+            "É uma estrela-do-mar muito leal, mas pouco inteligente.",
+            "Mora debaixo de uma pedra na Fenda do Biquini.",
+            "É preguiçoso, mas gosta de caçar águas-vivas com seu melhor amigo."
+        ]
+    },
+    {
+        "name": "Plankton",
+        "context": "Bob Esponja",
+        "photo": "/assets/images/characters/plankton.png",
+        "colors": [
+            "#70A497",
+            "#006840",
+            "#F3F199"
+        ],
+        "hints": [
+            "Dono do Balde de Lixo e arqui-inimigo do Siri Cascudo.",
+            "Está sempre tentando roubar a fórmula secreta do hambúrguer de siri.",
+            "É pequeno, mas muito astuto."
         ]
     },
     {
