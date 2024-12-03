@@ -30,6 +30,51 @@
         ]
     },
     {
+        "name": "Ele",
+        "context": "As Meninas Superpoderosas",
+        "photo": "/assets/images/characters/ele.png",
+        "colors": [
+            "#FE3300",
+            "#F99BA4",
+            "#000000"
+        ],
+        "hints": [
+            "Vilão com aparência andrógina.",
+            "Não se baseia apenas em força física, mas também em terror psicológico.",
+            "Alterna entre uma voz tranquila e surtos de fúria."
+        ]
+    },
+    {
+        "name": "Florzinha",
+        "context": "As Meninas Superpoderosas",
+        "photo": "/assets/images/characters/florzinha.png",
+        "colors": [
+            "#EB686E",
+            "#F2AA31",
+            "#DB2B39"
+        ],
+        "hints": [
+            "Junta com suas irmãs, protege a cidade de Townsville.",
+            "É inteligente, determinada e adora liderar estratégias de combate.",
+            "Foi criada em laboratório pelo cientista Professor Utônio."
+        ]
+    },
+    {
+        "name": "Lindinha",
+        "context": "As Meninas Superpoderosas",
+        "photo": "/assets/images/characters/lindinha.png",
+        "colors": [
+            "#2CB9E7",
+            "#E2F6FA",
+            "#FFE847"
+        ],
+        "hints": [
+            "Ela adora bichinhos de pelúcia.",
+            "É a mais doce e carinhosa das três irmãs.",
+            "Usa o penteado maria-chiquinha."
+        ]
+    },
+    {
         "name": "Bob Esponja",
         "context": "Bob Esponja",
         "photo": "/assets/images/characters/bobEsponja.png",
